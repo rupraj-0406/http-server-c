@@ -15,7 +15,7 @@ void handle_client(int client_fd) {
     parse_request(buffer, &req);
 
     printf("Method: %s, Path: %s\n", req.method, req.path);
-
+    printf("Body: %s\n", req.body);
     route_request(client_fd, &req);
 
     close(client_fd);
