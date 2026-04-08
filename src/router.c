@@ -1,4 +1,5 @@
 #include "router.h"
+#include "file_handler.h"
 #include <string.h>
 #include <unistd.h>
 
@@ -25,6 +26,16 @@ void route_request(int client_fd, HttpRequest *req)
             "Hello route working!";
 
         send(client_fd, response, strlen(response), 0);
+    }
+    else if (strcmp(req->method, "GET") == 0)
+    {
+
+        char file_path[256];
+
+        // map URL → file system
+        sprintf(file_path, "www%s", req->path);
+
+        serve_file(client_fd, file_path);
     }
     else if (strcmp(req->method, "POST") == 0 && strcmp(req->path, "/data") == 0)
     {
