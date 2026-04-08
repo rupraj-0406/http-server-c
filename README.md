@@ -1,4 +1,4 @@
-# C HTTP Server (From Scratch)
+# HTTP Server in C
 
 An HTTP server built in C using socket programming.
 This project demonstrates how HTTP servers work internally by implementing request parsing, routing, static file serving, and a simple file-based backend system.
