@@ -1,14 +1,12 @@
 # C HTTP Server
 
-A modular HTTP server built from scratch in C using sockets.
+A HTTP server built from scratch in C.
 
 ## Features
 
 - Supports GET, POST, DELETE, PATCH, HEAD
 - Static file serving
-- MIME type handling
 - Logging with timestamps
-- Modular architecture
 
 ## Build
 
