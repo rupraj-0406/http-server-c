@@ -3,12 +3,14 @@
 #include <arpa/inet.h>
 #include "socket.h"
 #include "client.h"
+#include "logger.h"
 
 int main() {
     int server_fd = create_server_socket(8080);
 
-    printf("Server is ready...\n");
-
+    // printf("Server is ready...\n");
+    log_info("Server is ready...");
+    
     while (1) {
         int client_fd = accept(server_fd, NULL, NULL);
 
