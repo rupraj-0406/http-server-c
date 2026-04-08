@@ -1,6 +1,7 @@
 #include "client.h"
 #include "parser.h"
 #include "router.h"
+#include "logger.h"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -13,7 +14,7 @@ void handle_client(int client_fd) {
 
     HttpRequest req;
     parse_request(buffer, &req);
-
+    log_request(req.method, req.path);
     printf("Method: %s, Path: %s\n", req.method, req.path);
     printf("Body: %s\n", req.body);
     route_request(client_fd, &req);

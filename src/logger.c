@@ -1,6 +1,23 @@
 #include "logger.h"
 #include <stdio.h>
+#include <time.h>
 
 void log_info(const char *message) {
-    printf("[INFO] %s\n", message);
+    time_t now = time(NULL);
+    struct tm *t = localtime(&now);
+
+    printf("[INFO] %04d-%02d-%02d %02d:%02d:%02d - %s\n",
+        t->tm_year + 1900, t->tm_mon + 1, t->tm_mday,
+        t->tm_hour, t->tm_min, t->tm_sec,
+        message);
+}
+
+void log_request(const char *method, const char *path) {
+    time_t now = time(NULL);
+    struct tm *t = localtime(&now);
+
+    printf("[REQUEST] %04d-%02d-%02d %02d:%02d:%02d - %s %s\n",
+        t->tm_year + 1900, t->tm_mon + 1, t->tm_mday,
+        t->tm_hour, t->tm_min, t->tm_sec,
+        method, path);
 }
