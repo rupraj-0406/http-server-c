@@ -33,7 +33,15 @@ void route_request(int client_fd, HttpRequest *req)
         char file_path[256];
 
         // map URL → file system
-        sprintf(file_path, "www%s", req->path);
+        // sprintf(file_path, "www%s", req->path);
+        if (strcmp(req->path, "/") == 0)
+        {
+            sprintf(file_path, "www/index.html");
+        }
+        else
+        {
+            sprintf(file_path, "www%s", req->path);
+        }
 
         serve_file(client_fd, file_path);
     }
