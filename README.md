@@ -104,4 +104,4 @@ Client → Socket → Parser → Router → Handler → Response
 
 * Rupraj Roy(CS2523)
 * Rohan Raj Padhy(CS2522)
-* Vivas Sarkar(JRF 2nd Year)
+* Bivash Sarkar(JRF 2nd Year)
