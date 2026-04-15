@@ -102,6 +102,6 @@ Client → Socket → Parser → Router → Handler → Response
 
 ## Author
 
-Rupraj Roy(CS2523)
-Rohan Raj Padhy(CS2522)
-Vivas Sarkar(JRF 2nd Year)
+* Rupraj Roy(CS2523)
+* Rohan Raj Padhy(CS2522)
+* Vivas Sarkar(JRF 2nd Year)
