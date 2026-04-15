@@ -77,14 +77,14 @@ curl -X DELETE http://localhost:8080/data
 
 ## API Endpoints
 
-GET / → Serve index.html
-GET /hello → Test route
-GET /data → Fetch stored data
+* GET / → Serve index.html
+* GET /hello → Test route
+* GET /data → Fetch stored data
 
-POST /data → Store data
-PATCH /data → Update data
-DELETE /data → Delete data
-HEAD / → Return headers only
+* POST /data → Store data
+* PATCH /data → Update data
+* DELETE /data → Delete data
+* HEAD / → Return headers only
 
 ---
 
@@ -103,3 +103,4 @@ Client → Socket → Parser → Router → Handler → Response
 ## Author
 
 Rupraj Roy(CS2523)
+Rohan Raj Padhy(CS2522)
