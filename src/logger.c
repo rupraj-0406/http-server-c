@@ -1,6 +1,11 @@
 #include "logger.h"
 #include <stdio.h>
 #include <time.h>
+//server history
+//keep record of=>
+//  1. when server starts
+//  2. what requests come
+//  3. what users are doing
 
 void log_info(const char *message) {
     time_t now = time(NULL);

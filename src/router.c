@@ -4,9 +4,22 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/socket.h>
-
+// Given (method + path) → what should server do?
+/*
+    GET  /        → serve index.html
+    GET  /data    → read file
+    POST /data    → write file
+*/ 
 void route_request(int client_fd, HttpRequest *req)
-{
+{   //where to send response=> client_fd
+    //what request is sent=> req
+    /*
+        HTTP response format:
+            Status line
+            Headers
+            Empty line
+            Body
+    */
     // HOME → serve index.html
     if (strcmp(req->method, "GET") == 0 && strcmp(req->path, "/") == 0)
     {
@@ -135,4 +148,25 @@ void route_request(int client_fd, HttpRequest *req)
 
         send(client_fd, response, strlen(response), 0);
     }
+    /*
+    Specific → first
+    Generic → last
+
+    Check specific routes:
+            "/" → index
+            "/hello" → message
+            "/data" → CRUD
+
+            Then:
+                GET → static file
+
+            Else:
+                404
+    
+    POST   → append
+    GET    → read
+    PATCH  → overwrite
+    DELETE → clear
+    
+    */
 }
